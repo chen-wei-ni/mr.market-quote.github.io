@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css')
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap')
+
+@mixin size($w,$h:$w)
+    width: $w
+    height: $h
+@mixin abpos($t:initial,$l:initial)
+    position: absolute
+    top: $t
+    left: $l
+
+$babyGreen: #D4F8F1
+$green: #00D6AD  
+$darkGreen: #009175
+
+html,body
+    margin: 0
+    padding: 0
+    +size(100%)
+    font-family: 'Noto Sans TC',serif
+
+
+section.part1
+    position: relative
+    background: url('images/title.png') center no-repeat
+    background-position: center
+    display: flex
+    justify-content: center
+    min-height: 685px       
+    
+    h3
+        max-width: 550px
+        padding-top: 80px
+
+        img
+            width: 100%
+
+[class^="coin"]
+    position: absolute
+
+    img
+        width: 100%
+
+.coin1
+    width: 50px
+    top: calc(80% - 50px)
+    left: calc(50% + 50px)
+    transform: rotate(105deg)
+.coin2
+    width: 150px
+    top: calc(80% - 50px)
+    left: calc(50% - 200px)
+
+.part2
+    text-align: center
+    margin: 6rem 0
+
+    p
+        font-size: 1.4rem
+        font-weight: 600
+        letter-spacing: 2px
+
+.part3
+    background-color: $green
+    margin: 0 auto
+
+.title
+    max-width: 55rem
+    margin-top: -10px
+
+    img
+        width: 100%
+
+.container
+    max-width: 55rem
+    margin: 0 auto
+    padding: 0 0 100px 0
+
+    .step1
+        display: flex
+        padding: 10px 50px
+        margin-top: 20px
+        align-items: center
+
+        .desc
+            flex-basis: 55%
+            text-align: center
+            letter-spacing: 2px
+            position: relative
+
+            h3
+                font-size: 25px
+                z-index: 5
+
+            &::before
+                content: "1"
+                font-family: 'Catamaran'
+                color: rgba($babyGreen,0.3)
+                font-size: 100px
+                +abpos(-40px,10%)
+
+            .highlight
+                margin: 5px 0
+
+                &:nth-child(3)
+                    margin-bottom: 30px                    
+
+            .mark
+                background: linear-gradient(transparent 50%,#fff 50%)
+                font-size: 18px
+                font-weight: 600
+                
+            p
+                line-height: 1rem
+                font-size: 16px
+        .pic1
+            flex-basis: 45%
+            .right
+                min-width: 300px
+                img
+                    width: 95%
+    
+    .mbstep2
+        display: none
+    .step2
+        margin-top: 40px
+
+        .desc
+            padding-top: 20px
+
+            &::before
+                content: "2"
+                font-family: 'Catamaran'
+                color: rgba($babyGreen,0.3)
+                font-size: 100px
+                +abpos(-40px,10%)
+    
+    .step3
+        margin-top: 80px       
+
+        .desc
+            &::before
+                content: "3"
+                font-family: 'Catamaran'
+                color: rgba($babyGreen,0.3)
+                font-size: 100px
+                +abpos(-40px,15%)
+
+.greenbar
+    +size(100%,20px)
+    background-color: $darkGreen
+
+.con2
+    .text
+        padding: 10px 50px
+        letter-spacing: 2px
+        font-size: 1.2rem
+        font-weight: 600
+
+    .pic
+        max-width: 800px
+        img
+            width: 100%
+
+    .target
+        position: relative
+        background-color: $green
+        padding: 5px
+        border-radius: 15px
+        margin: 20px 50px
+        .choosepart
+            background-color: $babyGreen
+            padding: 10px 50px
+            border-radius: 10px
+            border: 10px solid #fff
+
+            h4
+                letter-spacing: 2px
+                padding-left: 100px
+                font-size: 1.2rem
+            &::before
+                content: ""
+                background: url('images/small_icon.png') no-repeat
+                position: absolute
+                background-size: contain
+                +size(80px,100px)
+            .btn
+                display: flex
+                justify-content: center
+                button
+                    padding: 30px 30px
+                    +size(300px,80px)
+                    box-sizing: border-box
+                    margin: 10px 20px
+                    background-color: #fff
+                    border: 3px solid rgba($green,0.5)
+                    border-radius: 10px
+                    font-weight: 600
+                    cursor: pointer
+                    transition: all 0.3s ease
+                
+                    &:hover
+                        border: 3px solid #FFF
+
+.mark
+    background: linear-gradient(transparent 50%,$babyGreen 50%)  
+    font-size: 1.3rem    
+
+.askpart
+    margin-top: 80px 
+    position: relative
+
+    h3
+        padding-left: 90px
+        margin-top: 50px
+        position: relative
+
+        &::before
+            content:""
+            background: url('images/quest.png') center no-repeat
+            background-size: contain
+            +size(60px)
+            +abpos(-20px,10px)
+    
+    .investDesc
+        font-weight: normal
+        font-size: 1rem
+        padding: 10px 90px
+    
+    h3
+        &:nth-child(3)
+            
+            &::before
+                content:""
+                background: url('images/!.png') center no-repeat
+                background-size: contain
+                +size(60px)
+                +abpos(-10px,10px)
+        
+.link
+    ul
+        list-style: none
+        padding: 0
+
+        li
+            margin: 0
+            position: relative
+            
+            &::after
+                content:""
+                background: url('images/arrow.svg')
+                +abpos(25px,initial)
+                right: 10%
+                +size(20px)
+                transition: all 0.3s ease
+            a
+                text-decoration: none
+                background-color: $babyGreen
+                color: black
+                display: block
+                padding: 20px 0px 20px 30px
+                border: 3px solid $green
+                border-radius: 20px
+                margin: 20px 50px 20px 80px
+                transition: all 0.3s ease
+
+            &:hover
+                a
+                    border: 3px solid #fff
+                    background-color: #fff
+                    box-shadow:  3px 3px 8px   rgba(black,0.1)
+                &::after
+                    transform: translateX(10px)
+
+@media screen and ( max-width: 750px )
+
+    section.part1
+        position: relative
+        background: url('images/900_bg.png') center no-repeat
+        background-size: cover
+        background-position: center
+        display: flex
+        justify-content: center
+        max-width: 900px      
+        min-height: 400px
+
+        h3
+            max-width: 300px
+            padding: 0px
+
+            img
+                width: 100%
+    .part2
+        margin: 0px
+        padding: 10px
+    .container
+        max-width: 55rem
+        margin: 0 auto
+        padding: 15px
+
+        .step1
+            display: block
+            padding: 0
+            margin-top: 50px
+            align-items: center
+
+            .desc
+                flex-basis: 60%
+            .pic1
+                text-align: center
+                .right
+                    min-width: 80px
+                    img
+                        width: 60%
+        .step2
+            display: none
+        .mbstep2
+            display: block
+    
+    .con2
+        .text
+            padding: 10px
+        
+        .target
+            padding: 5px
+            border-radius: 15px
+            margin: 5px
+            
+            .choosepart
+                padding: 0
+                border-radius: 10px
+                border: 10px solid #fff
+                position: relative
+
+                h4
+                    letter-spacing: 1px
+                    padding-left: 70px
+                    font-size: 0.95rem
+                &::before
+                    content: ""
+                    background: url('images/small_icon.png') no-repeat
+                    position: absolute
+                    left: 15px
+                    top: 15px
+                    background-size: contain
+                    +size(60px)
+                .btn
+                    display: block
+                    text-align: center
+                    button
+                        padding: 0
+                        +size(220px,60px)
+                        box-sizing: border-box
+                        margin: 10px
+                        background-color: #fff
+                        border: 3px solid rgba($green,0.5)
+                        border-radius: 10px
+                        font-weight: 600
+                        cursor: pointer
+                        transition: all 0.3s ease
+        
+        .askpart
+            padding: 10px
+            margin: 0
+
+        .link
+            ul
+                li
+
+                    &::after
+                        content:""
+                        background: url('images/arrow.svg')
+                        +abpos(50%,initial)
+                        right: 5%
+                        transform: translateY(-50%)
+                        +size(10px)
+                        
+                    a
+                        padding: 18px 15px
+                        border: 3px solid $green
+                        border-radius: 10px
+                        margin: 20px 0
+                        font-size: 0.9rem
+
+
+
+        
+
+
+                
+            
+
+
+
+
+
